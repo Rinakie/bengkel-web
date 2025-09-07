@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bengkel Produksi Ifan Akta ft. Agathos Brothers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="img/logo-kiri.jpeg" alt="Logo Kiri" class="logo">
+    <div class="judul">
+      <h1>Bengkel Produksi Ifan Akta <span>ft. Agathos Brothers</span></h1>
+      <p>Tempat terbaik untuk custom rangka, bor up, las listrik, alumunium, dan painting di Bandar Lampung!</p>
+    </div>
+    <img src="img/logo-kanan.jpg" alt="Logo Kanan" class="logo">
+  </header>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="#layanan">Layanan</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#form">Form Pemesanan</a></li>
+      <li><a href="berita.html">Berita</a></li> <!-- menu baru -->
+    </ul>
+  </nav>
+
+  <!-- Layanan -->
+  <section id="layanan">
+    <h2>Layanan Kami</h2>
+
+    <!-- Custom Rangka -->
+    <h3>Custom Rangka</h3>
+    <div class="grid-gambar">
+      <img src="img/rangka1.jpeg" alt="Custom Rangka 1">
+      <img src="img/rangka2.jpeg" alt="Custom Rangka 2">
+      <img src="img/rangka3.jpeg" alt="Custom Rangka 3">
+      <img src="img/rangka4.jpeg" alt="Custom Rangka 4">
+    </div>
+
+    <!-- Las Listrik & Alumunium -->
+    <h3>Las Listrik & Alumunium</h3>
+    <div class="grid-gambar">
+      <img src="img/las1.jpeg" alt="Las 1">
+      <img src="img/las2.jpeg" alt="Las 2">
+      <img src="img/las3.jpeg" alt="Las 3">
+      <img src="img/las4.jpeg" alt="Las 4">
+    </div>
+
+    <!-- Bor Up -->
+    <h3>Bor Up</h3>
+    <div class="grid-gambar">
+      <img src="img/bor1.jpeg" alt="Bor 1">
+      <img src="img/bor2.jpeg" alt="Bor 2">
+      <img src="img/bor3.jpeg" alt="Bor 3">
+      <img src="img/bor4.jpeg" alt="Bor 4">
+    </div>
+
+    <!-- Painting -->
+    <h3>Painting</h3>
+    <div class="grid-gambar">
+      <img src="img/cat1.jpeg" alt="Painting 1">
+      <img src="img/cat2.jpeg" alt="Painting 2">
+      <img src="img/cat3.jpeg" alt="Painting 3">
+      <img src="img/cat4.jpeg" alt="Painting 4">
+    </div>
+
+    <!-- Servis Mesin -->
+    <h3>Servis Mesin</h3>
+    <div class="grid-gambar">
+      <img src="img/servis1.jpeg" alt="Mesin 1">
+      <img src="img/servis2.jpeg" alt="Mesin 2">
+      <img src="img/servis3.jpeg" alt="Mesin 3">
+      <img src="img/servis4.jpeg" alt="Mesin 4">
+    </div>
+
+    <!-- Elektronik -->
+    <h3>Perbaikan Elektronik</h3>
+    <div class="grid-gambar">
+      <img src="img/elektro1.jpeg" alt="Elektronik 1">
+      <img src="img/elektro2.jpeg" alt="Elektronik 2">
+      <img src="img/elektro3.jpeg" alt="Elektronik 3">
+      <img src="img/elektro4.jpeg" alt="Elektronik 4">
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <div class="kontak-container">
+      <div class="kontak-item">
+        <h3>Alamat</h3>
+        <p>Jl. K.S. Tubun No.57, Enggal, Kota Bandar Lampung, Lampung</p>
+      </div>
+      <div class="kontak-item">
+        <h3>Telepon / WhatsApp</h3>
+        <p><a href="https://wa.me/6285839171504" target="_blank">0858-3917-1504</a></p>
+      </div>
+      <div class="kontak-item">
+        <h3>Email</h3>
+        <p><a href="mailto:fachridjelipanglima@gmail.com">fachridjelipanglima@gmail.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Pemesanan -->
+  <section id="form">
+    <h2>Form Pemesanan</h2>
+    <form id="orderForm">
+      <label for="nama">Nama:</label>
+      <input type="text" id="nama" required><br><br>
+
+      <label for="telp">Nomor Telepon:</label>
+      <input type="tel" id="telp" required><br><br>
+
+      <label for="layanan">Pilih Layanan:</label>
+      <select id="layanan">
+        <option value="Custom Rangka">Custom Rangka</option>
+        <option value="Las Listrik & Alumunium">Las Listrik & Alumunium</option>
+        <option value="Bor Up">Bor Up</option>
+        <option value="Painting">Painting</option>
+        <option value="Servis Mesin">Servis Mesin</option>
+        <option value="Perbaikan Elektronik">Perbaikan Elektronik</option>
+      </select><br><br>
+
+      <input type="submit" value="Pesan via WhatsApp" class="submit-btn">
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bengkel Produksi Ifan Akta ft. Agathos Brothers. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <img src="" alt="Preview">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
