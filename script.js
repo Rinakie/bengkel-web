@@ -17,11 +17,11 @@ lightbox.addEventListener('click', () => {
 document.getElementById("orderForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  let nama = document.getElementById("nama").value;
-  let telp = document.getElementById("telp").value;
-  let layanan = document.getElementById("layanan").value;
+  let nama = document.getElementById("nama").value.trim();
+  let telp = document.getElementById("telp").value.trim();
+  let layanan = document.getElementById("layanan").value.trim();
 
-  if (!layanan) {
+  if (!layanan || layanan === "") {
     alert("Silakan pilih layanan terlebih dahulu!");
     return;
   }
