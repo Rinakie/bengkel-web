@@ -322,3 +322,91 @@ footer {
 .berita-item img:hover {
   transform: scale(1.2); /* membesar 20% waktu di-hover */
 }
+
+/* Burger menu default hidden di desktop */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header .logo {
+    width: 90px;
+    margin: 10px 0;
+  }
+
+  .grid-gambar {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .kontak-container {
+    flex-direction: column;
+  }
+
+  #form {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Extra kecil */
+@media (max-width: 480px) {
+  header .judul h1 {
+    font-size: 1.4rem;
+  }
+
+  header .judul p {
+    font-size: 0.9rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .berita-item img {
+    max-width: 100%;
+    display: block;
+    margin: 10px auto;
+  }
+
+  .berita-item h3 {
+    font-size: 18px;
+  }
+
+  .berita-item p {
+    font-size: 15px;
+  }
+}

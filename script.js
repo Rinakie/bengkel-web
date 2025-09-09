@@ -25,7 +25,7 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
     alert("Silakan pilih layanan terlebih dahulu!");
     return;
   }
-  
+
   let pesan = `Halo, saya ingin memesan layanan:
 - Nama: ${nama}
 - No HP: ${telp}
@@ -33,4 +33,12 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
 
   let url = "https://wa.me/6285839171504?text=" + encodeURIComponent(pesan);
   window.open(url, "_blank");
+});
+
+// Burger menu
+const menuToggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+menuToggle.addEventListener("click", () => {
+  menu.classList.toggle("show");
 });
