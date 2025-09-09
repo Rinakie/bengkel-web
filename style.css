@@ -438,8 +438,8 @@ footer {
 
 /* Besarkan judul tiap layanan */
 #layanan-kami .layanan-item h3 {
-  font-size: 2.2rem;   /* bisa ubah sesuai selera */
-  font-weight: 700;    /* tetap tebal */
+  font-size: 2.2rem !important;
+  font-weight: 700;
   margin-bottom: 10px;
-  text-align: center;  /* opsional, biar rapi di tengah kotak */
+  text-align: center;
 }
