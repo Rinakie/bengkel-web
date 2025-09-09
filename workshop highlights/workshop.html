@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshop Highlights - Bengkel Produksi Ifan Akta</title>
+  <link rel="icon" href="../img/logo-kiri.jpeg" type="image/jpeg">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+/* Workshop Highlights */
+#workshop-highlights {
+  padding: 20px;
+  background: #222;
+  color: #eee;
+  margin: 20px;
+  border-radius: 8px;
+}
+
+#workshop-highlights h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+}
+
+/* Container untuk grid gambar */
+.highlight-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.highlight-item {
+  background: #333;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  width: 200px;       /* ukuran kotak tetap */
+  text-align: center;
+}
+
+.highlight-item h3 {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #ff6600;
+}
+
+.highlight-item p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.highlight-item img {
+  width: 100%;       /* isi penuh kotak */
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.highlight-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="../img/logo-kiri.jpeg" alt="Logo Kiri" class="logo">
+    <div class="judul">
+      <h1>Bengkel Produksi Ifan Akta <span>ft. Agathos Brothers</span></h1>
+      <p>Tempat terbaik untuk custom rangka, bor up, las listrik, alumunium, dan painting di Bandar Lampung!</p>
+    </div>
+    <img src="../img/logo-kanan.jpg" alt="Logo Kanan" class="logo">
+  </header>
+
+  <!-- Navigasi -->
+  <nav>
+    <ul>
+      <li><a href="../index.html#layanan">Layanan</a></li>
+      <li><a href="../index.html#kontak">Kontak</a></li>
+      <li><a href="../index.html#form">Form Pemesanan</a></li>
+      <li><a href="../berita/berita.html">Berita</a></li>
+      <li><a href="workshop.html" class="active">Workshop Highlights</a></li>
+    </ul>
+  </nav>
+
+ <section id="workshop-highlights">
+  <h2>Workshop Highlights</h2>
+  <div class="highlight-list">
+    <div class="highlight-item">
+      <img src="../img/motor1.jpg" alt="Motor 1">
+      <h3>Bobber Yamaha Scorpio (Moscow)</h3>
+      <p>Selesai dirakit: 4 Desember 2024</p>
+    </div>
+
+    <div class="highlight-item">
+      <img src="../img/motor2.jpg" alt="Motor 2">
+      <h3>Bobber Yamaha Scorpio</h3>
+      <p>Selesai dirakit: 28 Agustus 2025</p>
+    </div>
+
+    <!-- Tambah item baru cukup copy div.highlight-item -->
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Bengkel Produksi Ifan Akta ft. Agathos Brothers. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Preview Gambar">
+  </div>
+
+  <!-- Script untuk lightbox -->
+  <script>
+    const highlightImages = document.querySelectorAll('.highlight-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('#lightbox .close');
+
+    highlightImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
