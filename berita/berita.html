@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berita Bengkel Ifan Akta</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .berita-item img {
+  width: 48%;        /* tiap gambar 48% dari lebar kontainer */
+  height: auto;
+  display: inline-block;
+  vertical-align: top;
+  margin: 1%;
+  border-radius: 10px;
+}
+  </style>
+</head>
+<body>
+
+    <div id="lightbox">
+  <span class="close">&times;</span>
+  <img id="lightbox-img" src="" alt="Preview Gambar">
+</div>
+
+  <!-- Header dan Navigasi bisa kamu copy dari index.html -->
+  <header>
+    <img src="../img/logo-kiri.jpeg" alt="Logo Kiri" class="logo" />
+    <div class="judul">
+      <h1>Bengkel Produksi Ifan Akta <span>ft. Agathos Brothers</span></h1>
+      <p>Tempat terbaik untuk custom rangka, bor up, las listrik, alumunium, dan painting di Bandar Lampung!</p>
+    </div>
+    <img src="../img/logo-kanan.jpg" alt="Logo Kanan" class="logo" />
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html#layanan">Layanan</a></li>
+      <li><a href="index.html#kontak">Kontak</a></li>
+      <li><a href="index.html#form">Form Pemesanan</a></li>
+      <li><a href="berita.html" class="active">Berita</a></li>
+    </ul>
+  </nav>
+
+  <section id="berita">
+    <h2>🔧 Update Proyek Bengkel</h2>
+    <div class="berita-list">
+      <!-- Contoh berita -->
+      <article class="berita-item">
+        <h3>Pembuatan Roda Tiga Honda Vario 160 Baru</h3>
+        <p class="tanggal">Selasa, 09 September 2025</p>
+        <img src="../img/vario-roda3-1.jpg" alt="Proses rangka roda tiga Vario 160" width="300">
+        <img src="../img/vario-roda3-2.jpg" alt="Hasil pemasangan roda tiga Vario 160" width="300">
+
+        <p>Proses modifikasi Honda Vario 160 baru menjadi motor roda tiga, 
+  dengan rangka tambahan besi dan sistem penggerak khusus. 
+  Pengerjaan ini memastikan kendaraan lebih stabil, aman, 
+  dan fungsional untuk berbagai kebutuhan.</p>
+      </article>
+      <!-- Tambah berita lain di sini -->
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bengkel Produksi Ifan Akta ft. Agathos Brothers. All rights reserved.</p>
+  </footer>
+
+  <!-- Script untuk lightbox berita -->
+  <script>
+    const beritaImages = document.querySelectorAll('.berita-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('#lightbox .close');
+
+    beritaImages.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    // Tutup kalau klik area gelap
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
