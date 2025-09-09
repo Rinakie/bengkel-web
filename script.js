@@ -21,6 +21,11 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
   let telp = document.getElementById("telp").value;
   let layanan = document.getElementById("layanan").value;
 
+  if (!layanan) {
+    alert("Silakan pilih layanan terlebih dahulu!");
+    return;
+  }
+  
   let pesan = `Halo, saya ingin memesan layanan:
 - Nama: ${nama}
 - No HP: ${telp}
