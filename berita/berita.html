@@ -45,7 +45,35 @@
   <section id="berita">
     <h2>🔧 Update Proyek Bengkel</h2>
     <div class="berita-list">
+    <div id="pagination"></div>
       <!-- Contoh berita -->
+
+      <article class="berita-item">
+        <h3>Poses epoxy rangka Kawasaki Ninja 250 konversi ke RX King </h3>
+        <p class="tanggal">Senin, 15 September 2025</p>
+        <img src="../img/epoksininja1.jpg" alt="Pengecatan epoxy rangka Kawasaki Ninja 250 ke RX King" width="300">
+        <img src="../img/epoksininja2.jpg" alt="Pengecetan epoxy rangka Kawasaki Ninja 250 ke RX King" width="300">
+
+        <p>Proses epoxy sedang dilakukan pada rangka Kawasaki Ninja 250 yang dimodifikasi menjadi gaya RX King.
+          Tahap ini berfungsi sebagai pelapis dasar untuk melindungi rangka dari karat, memperkuat struktur, sekaligus meratakan permukaan sebelum masuk ke proses cat finishing.
+          Epoxy sangat penting karena menentukan daya tahan jangka panjang serta kualitas hasil akhir, terutama pada modifikasi yang melibatkan perubahan besar seperti konversi Ninja 250 ke RX King.
+          Dengan persiapan yang rapi dan detail sejak tahap awal, hasil akhir nantinya akan terlihat lebih presisi, kokoh, dan siap menunjang performa motor setelah modifikasi seleesai.
+        </p>
+      </article>
+
+      <article class="berita-item">
+        <h3>Konsultasi desain lanjutan motor roda 3 Honda Vario 160</h3>
+        <p class="tanggal">Senin, 15 September 2025</p>
+        <img src="../img/konsulroda3.jpg" alt="Penggulungan sepul Yamaha Byson" width="300">
+
+        <p>Proses konsultasi antara pemilik bengkel dan konsumen terkait rencana modifikasi Honda Vario 160 menjadi motor roda tiga.
+          Dalam tahap ini, pemilik bengkel menjelaskan rancangan serta menampung ide dan kebutuhan konsumen, termasuk penambahan model pada rangka agar lebih kokoh dan nyaman digunakan.
+          Diskusi semacam ini penting karena menentukan detail teknis, mulai dari posisi roda tambahan, sistem rangka pendukung, hingga aspek keamanan saat berkendara.
+          Dengan adanya perencanaan yang matang sejak awal, hasil modifikasi bukan hanya terlihat sesuai keinginan konsumen, tetapi juga tetap mengutamakan kekuatan, keseimbangan, dan faktor keselamatan.
+          Dari konsultasi inilah langkah pengerjaan selanjutnya bisa lebih terarah dan profesional.
+        </p>
+      </article>
+
 
       <article class="berita-item">
         <h3>Perbaikan sepul Yamaha Byson & Jupiter MX</h3>
@@ -124,5 +152,67 @@
       }
     });
   </script>
+
+  <script>
+  const beritaItems = document.querySelectorAll(".berita-item");
+  const itemsPerPage = 5; // maksimal 5 berita per halaman
+  const totalPages = Math.ceil(beritaItems.length / itemsPerPage);
+  const pagination = document.getElementById("pagination");
+  let currentPage = 1;
+
+  function showPage(page) {
+    // batasi halaman
+    if (page < 1) page = 1;
+    if (page > totalPages) page = totalPages;
+    currentPage = page;
+
+    // sembunyikan semua berita
+    beritaItems.forEach((item, index) => {
+      item.style.display = "none";
+      if (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) {
+        item.style.display = "block";
+      }
+    });
+
+    // update tombol aktif
+    const buttons = document.querySelectorAll("#pagination button.page-btn");
+    buttons.forEach(btn => btn.classList.remove("active"));
+    if (buttons[page - 1]) {
+      buttons[page - 1].classList.add("active");
+    }
+
+    // update tombol prev/next disable
+    document.getElementById("prevBtn").disabled = page === 1;
+    document.getElementById("nextBtn").disabled = page === totalPages;
+  }
+
+  function createPagination() {
+    // tombol prev
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "Prev";
+    prevBtn.id = "prevBtn";
+    prevBtn.addEventListener("click", () => showPage(currentPage - 1));
+    pagination.appendChild(prevBtn);
+
+    // tombol nomor
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      btn.classList.add("page-btn");
+      btn.addEventListener("click", () => showPage(i));
+      pagination.appendChild(btn);
+    }
+
+    // tombol next
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Next";
+    nextBtn.id = "nextBtn";
+    nextBtn.addEventListener("click", () => showPage(currentPage + 1));
+    pagination.appendChild(nextBtn);
+  }
+
+  createPagination();
+  showPage(1);
+</script>
 </body>
 </html>

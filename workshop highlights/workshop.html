@@ -133,37 +133,45 @@
     </div>
 
     <div class="highlight-item">
-      <img src="../img/motor5.jpg" alt="Motor 3">
+      <img src="../img/motor8.jpg" alt="Motor 3">
+      <h3>British Honda Tiger (Pa'oel)</h3>
+      <p>Selesai dirakit: 26 Juli 2025</p>
+    </div>
+
+    <div class="highlight-item">
+      <img src="../img/motor5.jpg" alt="Motor 4">
       <h3>Chicanos Yamaha Scorpio</h3>
       <p>Selesai dirakit: 10 Juni 2025</p>
     </div>
 
     <div class="highlight-item">
-      <img src="../img/motor3.jpg" alt="Motor 4">
+      <img src="../img/motor3.jpg" alt="Motor 5">
       <h3>British Honda Tiger</h3>
       <p>Selesai dirakit: 6 Mei 2025</p>
     </div>
 
     <div class="highlight-item">
-      <img src="../img/motor7.jpg" alt="Motor 5">
+      <img src="../img/motor7.jpg" alt="Motor 6">
       <h3>Chopper Yamaha Byson (Gorgon)</h3>
       <p>Selesai dirakit: 21 Februari 2025</p>
     </div>
 
     <div class="highlight-item">
-      <img src="../img/motor1.jpg" alt="Motor 6">
+      <img src="../img/motor1.jpg" alt="Motor 7">
       <h3>Bobber Yamaha Scorpio (Moscow)</h3>
       <p>Selesai dirakit: 4 Desember 2024</p>
     </div>
 
      <div class="highlight-item">
-      <img src="../img/motor4.jpg" alt="Motor 7">
+      <img src="../img/motor4.jpg" alt="Motor 8">
       <h3>Choppy Cub Honda Supra (Kuda Besi)</h3>
       <p>Selesai dirakit: 14 Mei 2024</p>
     </div>
 
     <!-- Tambah item baru cukup copy div.highlight-item -->
   </div>
+  </div> <!-- penutup highlight-list -->
+<div id="highlight-pagination"></div>
 </section>
 
   <!-- Footer -->
@@ -201,6 +209,61 @@
       }
     });
   </script>
+
+<script>
+  const highlightItems = document.querySelectorAll(".highlight-item");
+  const highlightPerPage = 14; // maksimal 14 per halaman
+  const highlightTotalPages = Math.ceil(highlightItems.length / highlightPerPage);
+  const highlightPagination = document.getElementById("highlight-pagination");
+  let currentPage = 1;
+
+  function showHighlightPage(page) {
+    // pastikan page tidak keluar batas
+    if (page < 1) page = 1;
+    if (page > highlightTotalPages) page = highlightTotalPages;
+    currentPage = page;
+
+    // sembunyikan semua item
+    highlightItems.forEach((item, index) => {
+      item.style.display = "none";
+      if (index >= (page - 1) * highlightPerPage && index < page * highlightPerPage) {
+        item.style.display = "block";
+      }
+    });
+
+    renderPagination();
+  }
+
+  function renderPagination() {
+    highlightPagination.innerHTML = "";
+
+    // tombol Prev
+    const prevBtn = document.createElement("button");
+    prevBtn.textContent = "Prev";
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener("click", () => showHighlightPage(currentPage - 1));
+    highlightPagination.appendChild(prevBtn);
+
+    // nomor halaman
+    for (let i = 1; i <= highlightTotalPages; i++) {
+      const btn = document.createElement("button");
+      btn.textContent = i;
+      if (i === currentPage) btn.classList.add("active");
+      btn.addEventListener("click", () => showHighlightPage(i));
+      highlightPagination.appendChild(btn);
+    }
+
+    // tombol Next
+    const nextBtn = document.createElement("button");
+    nextBtn.textContent = "Next";
+    nextBtn.disabled = currentPage === highlightTotalPages;
+    nextBtn.addEventListener("click", () => showHighlightPage(currentPage + 1));
+    highlightPagination.appendChild(nextBtn);
+  }
+
+  // tampilkan halaman pertama saat load
+  showHighlightPage(1);
+</script>
 
 </body>
 </html>
